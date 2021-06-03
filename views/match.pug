@@ -4,7 +4,7 @@ block content
     div.container
         h1 #{title}
         h3 Új mérkőzés 
-        table.table 
+        table.table.table-striped(data-ng-controller="matchHandlerController")
             thead 
                 tr 
                     th #
@@ -22,19 +22,17 @@ block content
                     td
                         input.form-control(data-ng-model='match.place')
                     td
-                        select.form-control(data-ng-model='match.team1')
-                        option(data-ng-repeat='team in teamList' value='{{team._id}}') {{team.name}} 
+                        input.form-control(data-ng-model='match.team1')
                     td
-                        select.form-control(data-ng-model='match.team2')
-                        option(data-ng-repeat='team in teamList' value='{{team._id}}') {{team.name}} 
+                        input.form-control(data-ng-model='match.team2')
                     td
                         input.form-control(data-ng-model='match.goal1')
                     td
                         input.form-control(data-ng-model='match.goal2')
                     td
-                        input.form-control(type='date' data-ng-model='match.startDate')
+                        input.form-control(data-ng-model='match.startDate')
                     td
-                        input(type='checkbox' data-ng-model='match.done')
+                        input.form-control(data-ng-model='match.done')
                     td
                         button.btn.btn-success(data-ng-click='createMatch(match)') mentés
                     tr
@@ -44,20 +42,18 @@ block content
                     td
                         input.form-control(data-ng-model='match.place')
                     td
-                        select.form-control(data-ng-model='match.team1')
-                        option(data-ng-repeat='team in teamList' value='{{team._id}}') {{team.name}} 
+                        input.form-control(data-ng-model='match.team1')
                     td
-                        select.form-control(data-ng-model='match.team2')
-                        option(data-ng-repeat='team in teamList' value='{{team._id}}') {{team.name}} 
+                        input.form-control(data-ng-model='match.team2')
                     td
                         input.form-control(data-ng-model='match.goal1')
                     td
                         input.form-control(data-ng-model='match.goal2')
                     td
-                        input.form-control(type='date' data-ng-model='match.startDate')
+                        input.form-control(data-ng-model='match.startDate')
                     td
-                        input(type='checkbox' data-ng-model='match.done')
+                        input.form-control(data-ng-model='match.done')
                     td
                         .btn-group
-                        button.btn.btn-info(data-ng-click='updateMatch(match)')
-                        button.btn.btn-danger(data-ng-click='deleteMatch(match)')
+                        button.btn.btn-info(data-ng-click='updateMatch(match)') frissítés
+                             
