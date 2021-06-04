@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 var match = require('../model/match');
 
+/* var express = require('express');
+var router = express.Router();
+var mongoose = require('mongoose');
+var matchModel = require('../model/match');
+var teamModel = require('../model/team');
+var voteModel = require('../model/vote'); */
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('match', { title: 'Mérkőzések' });
@@ -67,4 +74,17 @@ router.get('/list', function(req, res, next){
     });
 });
 
-module.exports = router;
+/** Meccs törlése. */
+router.delete('/:id', function(req, res, next){
+    matchModel.remove({'_id': req.params.id}, function(err, data){
+        if(err){
+            res.end('remove failed');
+        } else {
+            res.json(data);
+        }
+    })
+});
+
+
+
+module.exports = router; 
