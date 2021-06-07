@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
 var match = require('../model/match');
+var teamModel = require('../model/team');
+var voteModel = require('../model/vote');
 
 /* var express = require('express');
 var router = express.Router();
